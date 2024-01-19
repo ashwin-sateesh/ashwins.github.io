@@ -34,10 +34,76 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+	<style>
+		body {
+		  margin: 0;
+		  overflow: hidden;
+		}
 	
+		canvas {
+		  display: block;
+		  position: absolute;
+		}
+	  </style>
     
   </head>
+  
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <script>
+		const canvas = document.createElement('canvas');
+		document.body.appendChild(canvas);
+	
+		const ctx = canvas.getContext('2d');
+		const meteors = [];
+	
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+	
+		function Meteor() {
+		  this.x = Math.random() * canvas.width;
+		  this.y = 0;
+		  this.radius = Math.random() * 2 + 1;
+		  this.speed = Math.random() * 3 + 1;
+		  this.color = '#ffffff';
+		}
+	
+		Meteor.prototype.draw = function () {
+		  ctx.beginPath();
+		  ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+		  ctx.fillStyle = this.color;
+		  ctx.fill();
+		};
+	
+		Meteor.prototype.update = function () {
+		  this.y += this.speed;
+	
+		  if (this.y > canvas.height) {
+			this.y = 0;
+			this.x = Math.random() * canvas.width;
+		  }
+	
+		  this.draw();
+		};
+	
+		function createMeteors() {
+		  for (let i = 0; i < 50; i++) {
+			meteors.push(new Meteor());
+		  }
+		}
+	
+		function animate() {
+		  requestAnimationFrame(animate);
+		  ctx.clearRect(0, 0, canvas.width, canvas.height);
+	
+		  meteors.forEach(meteor => {
+			meteor.update();
+		  });
+		}
+	
+		createMeteors();
+		animate();
+	  </script>
 	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
