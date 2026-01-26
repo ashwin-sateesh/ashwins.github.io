@@ -8650,12 +8650,16 @@ h1, h2, h3, h4, h5,
 .ftco-about .img-about {
   width: 100%;
   z-index: 0;
-  position: relative; }
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #0f0f0f; }
   .ftco-about .img-about .img {
     display: block;
     width: 100%;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 16px; }
 
 .ftco-about ul.about-info {
   display: inline-block;
@@ -8762,6 +8766,34 @@ h1, h2, h3, h4, h5,
       .ftco-partner .partner {
         padding: 0 70px;
         margin-bottom: 40px; } }
+
+.ftco-partner.about-social .about-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: 0;
+  margin-right: 0; }
+
+.ftco-partner.about-social .partner {
+  height: 48px;
+  width: 48px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease; }
+
+.ftco-partner.about-social .partner span {
+  font-size: 22px;
+  line-height: 1; }
+
+.ftco-partner.about-social .partner:hover {
+  background: #3e64ff;
+  color: #fff; }
 
 .services-1 {
   margin-bottom: 40px;
