@@ -8652,9 +8652,14 @@ h1, h2, h3, h4, h5,
   z-index: 0;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.ftco-about .profile-stack {
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 18px; }
 
 .ftco-about .profile-wrapper {
