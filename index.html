@@ -37,7 +37,10 @@
 	
     
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="space-theme">
+	<canvas id="space-canvas" class="space-canvas" aria-hidden="true"></canvas>
+	<div id="transition-overlay" class="transition-overlay" aria-hidden="true"></div>
+	<div id="space-loading" class="space-loading" aria-live="polite">Initializing starfield...</div>
 	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -60,13 +63,14 @@
 	      </div>
 	    </div>
 	  </nav>
-	  <section class="hero-wrap js-fullheight">
+	  <section class="hero-wrap js-fullheight space-section" id="home-section" data-space="home">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
           <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
           	<div class="text text-center">
           		<span class="subheading">Hey! I am</span>
+				<p class="space-hero-name">Ashwin S</p>
 		  				<h1>Ashwin Sateesh Kumar</h1>
 						  
 			  				<h2>
@@ -75,6 +79,8 @@
 								     data-period="1200"
 								     data-rotate='["Engineer", "Data Scientist", "Machine Learning Enthusiast", "Astrophile", "Cinephile" ]'></span>
 								</h2>
+							<p class="space-tagline">Building intelligent systems with curiosity and purpose.</p>
+							<p><a href="#about-section" class="btn btn-primary space-cta">Begin Journey</a></p>
 							</div>
             </div>
           </div>
@@ -87,7 +93,7 @@
 			</div>
     </section>
 
-    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb space-section" id="about-section" data-space="mars">
     	<div class="container">
     		<div class="row d-flex no-gutters">
     			<div class="col-md-6 col-lg-6 d-flex">
@@ -112,6 +118,8 @@
 		          <div class="col-md-12 heading-section ftco-animate">
 		          	<h1 class="big">About</h1>
 		            <h2 class="mb-4">About Me</h2>
+					<p class="space-intro">I design intelligent systems that blend curiosity with practical impact. This space is reserved for a short bio paragraph that sets the tone for the journey.</p>
+					<p class="space-intro">Use this second paragraph to highlight values, focus areas, and the type of work you love to do.</p>
 		            <P align="justify">An AI enthusiast with strong analytical, problem-solving, and decision-making skills. Passionate about leveraging statistical analysis, machine learning, and AI to build systems that lead to a better community. A dedicated team player who likes to work in a fast-paced environment and is committed to making positive contributions.</P>
 		            <P align="justify">I am naturally curious and exploratory. I’m deeply interested in filmmaking and space. I enjoy learning about cars, love trying new food, traveling to new places, and diving into a good book.</P>
 					<ul class="about-info mt-4 px-md-0 px-2">
@@ -162,12 +170,13 @@
 
     
 
-    <section class="ftco-section ftco-no-pb goto-here" id="background-section">
+    <section class="ftco-section ftco-no-pb goto-here space-section" id="background-section" data-space="saturn">
 		<div class="container-fluid px-md-5">
 			<div class="row justify-content-center py-5 mt-5">
 		  <div class="col-md-12 heading-section text-center ftco-animate">
 			  <h1 class="big big-2">Background</h1>
 			<h2 align = "text-center",class="mb-4">Background</h2>
+			<p class="space-intro text-center">A narrative checkpoint in the journey: education, experience, and the milestones that shaped this path.</p>
 			<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>-->
 		  </div>
 
@@ -284,7 +293,7 @@
 	    				
 				      
 
-	<section class="ftco-section" id="skills-section">
+	<section class="ftco-section space-section" id="skills-section" data-space="star">
 		<!--section class="ftco-section" id="p-section">-->
 			<div class="container-fluid px-md-5">
 				<div class="row justify-content-center py-5 mt-5">
@@ -295,6 +304,17 @@
 			  </div>
 
 			  
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-10 text-center space-skill-tags">
+					<span>ML</span>
+					<span>NLP</span>
+					<span>CV</span>
+					<span>Data Science</span>
+					<span>RAG</span>
+					<span>FastAPI</span>
+					<span>Python</span>
+				</div>
 			</div>
 		
 		
@@ -614,7 +634,7 @@
 	</section>
     
 	
-	<section class="ftco-section" id="projects-section">
+	<section class="ftco-section space-section" id="projects-section" data-space="galaxy">
     	<div class="container-fluid px-md-5">
     		<div class="row justify-content-center py-5 mt-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
@@ -623,6 +643,40 @@
             <!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>-->
           </div>
         </div>
+			<div class="row space-placeholder-projects">
+				<div class="col-md-6 text-center d-flex ftco-animate">
+					<a href="javascript:void(0)" class="services-1 shadow space-card" aria-label="Project placeholder: Lunar Rover AI">
+						<div class="desc">
+							<h3 class="mb-5">Lunar Rover AI</h3>
+							<p align="text-center">Autonomous navigation and hazard detection for long-range lunar exploration.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 text-center d-flex ftco-animate">
+					<a href="javascript:void(0)" class="services-1 shadow space-card" aria-label="Project placeholder: Nebula Notes">
+						<div class="desc">
+							<h3 class="mb-5">Nebula Notes</h3>
+							<p align="text-center">A knowledge graph assistant that connects research across galaxies of data.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 text-center d-flex ftco-animate">
+					<a href="javascript:void(0)" class="services-1 shadow space-card" aria-label="Project placeholder: Orbit Forecast">
+						<div class="desc">
+							<h3 class="mb-5">Orbit Forecast</h3>
+							<p align="text-center">Time-series modeling for mission planning and orbital anomaly prediction.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 text-center d-flex ftco-animate">
+					<a href="javascript:void(0)" class="services-1 shadow space-card" aria-label="Project placeholder: Warp Comms">
+						<div class="desc">
+							<h3 class="mb-5">Warp Comms</h3>
+							<p align="text-center">Real-time captioning and translation for deep-space communications.</p>
+						</div>
+					</a>
+				</div>
+			</div>
     		<div class="row">
 				    
 				    <div class="col-md-6 text-center d-flex ftco-animate">
