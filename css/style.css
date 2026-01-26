@@ -8650,7 +8650,12 @@ h1, h2, h3, h4, h5,
 .ftco-about .img-about {
   width: 100%;
   z-index: 0;
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px; }
 
 .ftco-about .profile-wrapper {
   width: 100%;
@@ -8773,16 +8778,16 @@ h1, h2, h3, h4, h5,
         padding: 0 70px;
         margin-bottom: 40px; } }
 
-.ftco-partner.about-social .about-social-links {
+.ftco-about .about-social {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%; }
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto; }
 
-.ftco-partner.about-social .partner {
+.ftco-about .about-social .partner {
   height: 48px;
   width: 48px;
   padding: 0;
@@ -8795,11 +8800,11 @@ h1, h2, h3, h4, h5,
   text-decoration: none;
   transition: background 0.2s ease, color 0.2s ease; }
 
-.ftco-partner.about-social .partner span {
+.ftco-about .about-social .partner span {
   font-size: 22px;
   line-height: 1; }
 
-.ftco-partner.about-social .partner:hover {
+.ftco-about .about-social .partner:hover {
   background: #3e64ff;
   color: #fff; }
 
