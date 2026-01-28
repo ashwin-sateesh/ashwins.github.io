@@ -1,171 +1,100 @@
-/* Space Journey - Senior Creative Engineer Theme */
+/* Space Journey Theme Overrides */
 
 :root {
-  --glass-bg: rgba(15, 15, 25, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --neon-accent: #4da6ff;
-  --text-main: #f0f0f0;
-  --text-dim: #b0b0b0;
+  --space-black: #000000;
+  --star-white: #ffffff;
+  --mars-red: rgba(193, 68, 14, 0.2);
+  --saturn-gold: rgba(218, 165, 32, 0.15);
+  --star-glow: rgba(100, 200, 255, 0.15);
+  --galaxy-purple: rgba(75, 0, 130, 0.2);
+  --text-color: #e0e0e0;
 }
 
 body {
-  background-color: #000; /* No White Screen */
-  color: var(--text-main);
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  margin: 0;
+  background-color: var(--space-black);
+  color: var(--text-color);
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Canvas Layer */
+/* Fixed Canvas Background */
 #space-canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  pointer-events: none; /* Let clicks pass through */
+  pointer-events: none;
 }
 
-/* Typography & Contrast Overlays */
+/* Typography & Readability */
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
-  font-weight: 600;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-p {
-  color: var(--text-dim);
-  font-weight: 300;
-  line-height: 1.8;
+p, span, li, a {
+  color: #ddd;
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
 
-/* Global Section Styles */
-section {
-    position: relative;
-    /* Ensure no background colors block the canvas */
-    background: transparent !important; 
-    z-index: 10;
+.heading-section h2 {
+    color: #fff;
 }
 
-/* Sticky Glassmorphism Nav */
+.subheading {
+    color: #4da6ff !important; /* Brighter accent */
+}
+
+/* Navbar */
 .ftco-navbar-light {
-    position: sticky !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--glass-bg) !important;
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 15px 0 !important;
-    z-index: 1000;
-    transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(5px);
 }
 
-.navbar-brand span {
-    color: var(--neon-accent);
-}
-.navbar-brand {
-    color: #fff !important;
-    font-weight: 700;
-    letter-spacing: 1px;
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
-.nav-link {
-    color: rgba(255,255,255,0.7) !important;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    transition: color 0.3s ease;
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link {
+  color: #fff !important;
+  text-shadow: 0 0 8px #fff;
 }
 
-.nav-link:hover, .nav-item.active .nav-link {
-    color: var(--neon-accent) !important;
-    text-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+/* Section Containers - Transparent to show canvas */
+section {
+  background: transparent !important;
+  position: relative;
+  transition: opacity 0.5s ease;
 }
 
-/* High Contrast Content Wrappers */
-.resume-wrap, .services-1, .ftco-about, .block-18, .progress-wrap {
-    background: rgba(10, 12, 18, 0.75) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
+/* Content Cards/Wrappers to ensure readability */
+.resume-wrap, .services-1, .ftco-about, .bg-white, .block-18 {
+    background: rgba(10, 10, 20, 0.6) !important; /* Semi-transparent dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .services-1:hover {
-    transform: translateY(-5px) scale(1.02);
-    border-color: var(--neon-accent);
-    box-shadow: 0 15px 40px rgba(77, 166, 255, 0.15);
+    background: rgba(30, 30, 50, 0.8) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
 }
 
-/* Progress Bars */
-.progress {
-    background: rgba(255,255,255,0.1);
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
+.progress-circle .bg-white {
+    background: rgba(10, 10, 20, 0.6) !important;
 }
 
-.progress-bar {
-    position: relative;
-    border-radius: 4px;
-    background-image: linear-gradient(90deg, var(--neon-accent), #fff);
-    box-shadow: 0 0 15px var(--neon-accent);
+/* Specific text overrides for dark mode compatibility */
+.text-gray {
+    color: #aaa !important;
 }
 
-/* Buttons */
-.btn-primary {
-    background: transparent;
-    border: 1px solid var(--neon-accent);
-    color: var(--neon-accent);
-    border-radius: 50px;
-    padding: 12px 30px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(77, 166, 255, 0.1);
-}
-
-.btn-primary:hover {
-    background: var(--neon-accent);
-    color: #fff;
-    box-shadow: 0 0 25px rgba(77, 166, 255, 0.5);
-    border-color: var(--neon-accent);
-}
-
-/* Hide Unwanted Elements */
-#ftco-loader { display: none !important; }
-.mouse { display: none; } /* Remove scroll mouse icon to keep view clean */
-.overlay { display: none; } /* Remove default Bootstrap overlays */
-
-/* Hero Specifics */
-.hero-wrap .text h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    background: -webkit-linear-gradient(#fff, #aaa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-}
-
-.hero-wrap .text h2 {
-    font-size: 1.5rem;
-    color: var(--neon-accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-}
-
-/* Footer Transparency */
-.ftco-footer {
-    background: rgba(0,0,0,0.9) !important;
-    border-top: 1px solid var(--glass-border);
+/* Smooth Scroll behavior is handled by JS, but ensure CSS doesn't fight it */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Loading Overlay */
@@ -181,7 +110,44 @@ section {
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 1s ease-out;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Hide default loader from template if possible via CSS, or we manage it in JS */
+#ftco-loader {
+    display: none !important; 
+}
+
+/* Progress Bar Colors - Space Neon Theme */
+.progress-bar.color-1 { background-color: #ff4d4d !important; box-shadow: 0 0 10px #ff4d4d; }
+.progress-bar.color-2 { background-color: #4da6ff !important; box-shadow: 0 0 10px #4da6ff; }
+.progress-bar.color-3 { background-color: #ffd11a !important; box-shadow: 0 0 10px #ffd11a; }
+.progress-bar.color-4 { background-color: #c6538c !important; box-shadow: 0 0 10px #c6538c; }
+.progress-bar.color-5 { background-color: #29a329 !important; box-shadow: 0 0 10px #29a329; }
+.progress-bar.color-6 { background-color: #ff9933 !important; box-shadow: 0 0 10px #ff9933; }
+
+/* Resume Page Navigation */
+#navi ul li a {
+    color: #ccc;
+}
+#navi ul li a.current {
+    color: #4da6ff;
+    border-bottom: 2px solid #4da6ff;
+}
+
+/* Footer */
+.ftco-footer {
+    background: rgba(0,0,0,0.9) !important;
 }
