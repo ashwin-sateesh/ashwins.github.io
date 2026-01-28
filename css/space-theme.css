@@ -1,0 +1,153 @@
+/* Space Journey Theme Overrides */
+
+:root {
+  --space-black: #000000;
+  --star-white: #ffffff;
+  --mars-red: rgba(193, 68, 14, 0.2);
+  --saturn-gold: rgba(218, 165, 32, 0.15);
+  --star-glow: rgba(100, 200, 255, 0.15);
+  --galaxy-purple: rgba(75, 0, 130, 0.2);
+  --text-color: #e0e0e0;
+}
+
+body {
+  background-color: var(--space-black);
+  color: var(--text-color);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Fixed Canvas Background */
+#space-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Typography & Readability */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+p, span, li, a {
+  color: #ddd;
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+
+.heading-section h2 {
+    color: #fff;
+}
+
+.subheading {
+    color: #4da6ff !important; /* Brighter accent */
+}
+
+/* Navbar */
+.ftco-navbar-light {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(5px);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link {
+  color: #fff !important;
+  text-shadow: 0 0 8px #fff;
+}
+
+/* Section Containers - Transparent to show canvas */
+section {
+  background: transparent !important;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+/* Content Cards/Wrappers to ensure readability */
+.resume-wrap, .services-1, .ftco-about, .bg-white, .block-18 {
+    background: rgba(10, 10, 20, 0.6) !important; /* Semi-transparent dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.services-1:hover {
+    background: rgba(30, 30, 50, 0.8) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.progress-circle .bg-white {
+    background: rgba(10, 10, 20, 0.6) !important;
+}
+
+/* Specific text overrides for dark mode compatibility */
+.text-gray {
+    color: #aaa !important;
+}
+
+/* Smooth Scroll behavior is handled by JS, but ensure CSS doesn't fight it */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 1s ease-out;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Hide default loader from template if possible via CSS, or we manage it in JS */
+#ftco-loader {
+    display: none !important; 
+}
+
+/* Progress Bar Colors - Space Neon Theme */
+.progress-bar.color-1 { background-color: #ff4d4d !important; box-shadow: 0 0 10px #ff4d4d; }
+.progress-bar.color-2 { background-color: #4da6ff !important; box-shadow: 0 0 10px #4da6ff; }
+.progress-bar.color-3 { background-color: #ffd11a !important; box-shadow: 0 0 10px #ffd11a; }
+.progress-bar.color-4 { background-color: #c6538c !important; box-shadow: 0 0 10px #c6538c; }
+.progress-bar.color-5 { background-color: #29a329 !important; box-shadow: 0 0 10px #29a329; }
+.progress-bar.color-6 { background-color: #ff9933 !important; box-shadow: 0 0 10px #ff9933; }
+
+/* Resume Page Navigation */
+#navi ul li a {
+    color: #ccc;
+}
+#navi ul li a.current {
+    color: #4da6ff;
+    border-bottom: 2px solid #4da6ff;
+}
+
+/* Footer */
+.ftco-footer {
+    background: rgba(0,0,0,0.9) !important;
+}
